@@ -13,7 +13,7 @@ class TestNubbinBattery(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         current_date = datetime.today().date()
-        last_service_date = current_date.replace(year=current_date.year - 1)
+        last_service_date = current_date.replace(year=current_date.year - 4)
 
         nubbinBattery = nubbinBattery = NubbinBattery(current_date, last_service_date)
         self.assertFalse(nubbinBattery.needs_service())
