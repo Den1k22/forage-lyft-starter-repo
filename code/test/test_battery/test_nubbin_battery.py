@@ -5,17 +5,17 @@ from battery.nubbin_battery import NubbinBattery
 
 class TestNubbinBattery(unittest.TestCase):
     def test_battery_should_be_serviced(self):
-        today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 5)
+        current_date = datetime.today().date()
+        last_service_date = current_date.replace(year=current_date.year - 5)
 
-        nubbinBattery = NubbinBattery(today, last_service_date)
+        nubbinBattery = NubbinBattery(current_date, last_service_date)
         self.assertTrue(nubbinBattery.needs_service())
 
     def test_battery_should_not_be_serviced(self):
-        today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 1)
+        current_date = datetime.today().date()
+        last_service_date = current_date.replace(year=current_date.year - 1)
 
-        nubbinBattery = nubbinBattery = NubbinBattery(today, last_service_date)
+        nubbinBattery = nubbinBattery = NubbinBattery(current_date, last_service_date)
         self.assertFalse(nubbinBattery.needs_service())
 
 if __name__ == '__main__':

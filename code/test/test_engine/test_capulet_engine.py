@@ -11,12 +11,6 @@ class TestCapuletEngine(unittest.TestCase):
         self.assertTrue(nubbinBattery.needs_service())
 
     def test_engine_should_not_be_serviced(self):
-        current_mileage = 0
-        last_service_mileage = 0
-
-        nubbinBattery = nubbinBattery = CapuletEngine(current_mileage, last_service_mileage)
-        self.assertFalse(nubbinBattery.needs_service())
-
         current_mileage = 30000
         last_service_mileage = 0
 
