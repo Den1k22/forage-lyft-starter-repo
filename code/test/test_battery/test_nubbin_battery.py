@@ -15,7 +15,7 @@ class TestNubbinBattery(unittest.TestCase):
         current_date = datetime.today().date()
         last_service_date = current_date.replace(year=current_date.year - 4)
 
-        nubbinBattery = nubbinBattery = NubbinBattery(current_date, last_service_date)
+        nubbinBattery = NubbinBattery(current_date, last_service_date)
         self.assertFalse(nubbinBattery.needs_service())
 
 if __name__ == '__main__':
